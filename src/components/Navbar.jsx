@@ -22,7 +22,7 @@ const Navbar = () => {
       transition={{ type: "spring", stiffness: 100 }}
     >
       <div
-        className={`max-w-7xl mx-auto px-6  rounded-4xl font-[Poppins] ${
+        className={`max-w-7xl mx-auto px-6  rounded-4xl font-[Inter] ${
           scrolled ? "bg-black" : "bg-black/60"
         }`}
       >
@@ -68,7 +68,7 @@ const Navbar = () => {
             </div>
             <div className="ml-3">
               <motion.span
-                className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#A1FFCE] to-[#FAFFD1]"
+                className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#A1FFCE] to-[#FAFFD1]"
                 animate={{
                   textShadow: [
                     "0px 0px 0px rgba(0,0,0,0)",
@@ -78,14 +78,14 @@ const Navbar = () => {
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                PremiumDetail
+                Sparkling Car Care
               </motion.span>
             </div>
           </motion.a>
 
           {/* Desktop Navigation with shine effect */}
-          <div className="hidden md:flex md:items-center md:space-x-8 xl:items-center bg-gray-600/70 p-5 rounded-bl-4xl rounded-tr-4xl shadow-lg text-amber-50">
-            <NavLink href="/" text="Home" />
+          <div className=" hidden md:flex md:items-center md:space-x-8 xl:items-center bg-gray-600/70 p-5 rounded-bl-4xl rounded-tr-4xl shadow-lg text-amber-50 font-semibold">
+            <NavLink href="/" text="Home"  />
             <NavLink href="/services" text="Services" />
             <NavLink href="/packages" text="Packages" />
             <NavLink href="/contact" text="Contact" />
@@ -110,7 +110,7 @@ const Navbar = () => {
                 transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 1 }}
                 style={{ filter: "blur(8px)" }}
               />
-              <span className="relative flex items-center">
+              <span className="relative flex items-center ">
                 BOOK NOW
                 <Star className="ml-2 h-4 w-4" />
               </span>
@@ -145,7 +145,7 @@ const Navbar = () => {
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
         >
-          <div className="px-4 py-6 space-y-3 bg-gradient-to-b from-blue-800 via-blue-700 to-blue-600 rounded-b-3xl shadow-xl">
+          <div className="px-4 py-6 space-y-3 bg-gradient-to-b from-blue-800 via-blue-700 to-blue-600 rounded-b-3xl shadow-xl font-[Inter]">
             <MobileNavLink
               href="/"
               text="Home"
