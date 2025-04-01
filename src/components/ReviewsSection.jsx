@@ -136,7 +136,7 @@ const ReviewsSection = ({ reviews, ReviewBack }) => {
             href="https://maps.app.goo.gl/MY6iDmVkR5A6VAxP7"
             target="_blank"
             whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center text-blue-200 font-medium text-[20px]"
+            className="inline-flex items-center text-blue-200 font-medium text-[25px]"
           >
             See all reviews on Google <ChevronRight size={16} />
           </motion.a>

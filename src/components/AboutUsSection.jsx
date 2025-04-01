@@ -62,16 +62,19 @@ const AboutUsSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
 
-              <a href="/services"><button className="bg-gray-700 hover:bg-gray-800 cursor-pointer text-white py-3 px-6 rounded transition duration-300">
+              <a href="/services"><button className="border border-gray-700 text-gray-300  hover:text-black cursor-pointer hover:bg-gray-100 py-3 px-6 rounded transition duration-300">
                 OUR SERVICES
               </button></a>
               <a href="/contact"><button className="border border-gray-700 text-gray-300  hover:text-black cursor-pointer hover:bg-gray-100 py-3 px-6 rounded transition duration-300">
                 CONTACT US
               </button></a>
+              <a href="/packages"><button className="border border-gray-700 text-gray-300  hover:text-black cursor-pointer hover:bg-gray-100 py-3 px-6 rounded transition duration-300">
+                PACKAGES
+              </button></a>
               
             </div>
           </div>
-        </div>
+        </div>  
       </div>
     </div>
   );

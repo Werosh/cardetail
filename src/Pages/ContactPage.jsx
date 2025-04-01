@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { FaTiktok } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const ContactPage = () => {
+  const form = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,6 +17,8 @@ const ContactPage = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,34 +27,53 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        vehicleType: "",
-        service: "",
-        message: "",
-        preferredDate: "",
-        preferredTime: "",
+    // Replace these with your actual Email.js credentials
+    const serviceId = "service_sm7cbb8";
+    const templateId = "template_k832hih";
+    const publicKey = "EzReJSUxpdt8P7ZqI"; // You need to add your public key here
+
+    emailjs
+      .sendForm(serviceId, templateId, form.current, publicKey)
+      .then((result) => {
+        console.log("Email sent successfully:", result.text);
+        setSubmitted(true);
+        setLoading(false);
+
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            vehicleType: "",
+            service: "",
+            message: "",
+            preferredDate: "",
+            preferredTime: "",
+          });
+          setSubmitted(false);
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error("Failed to send email:", error);
+        setError(
+          "Failed to send your request. Please try again or contact us directly."
+        );
+        setLoading(false);
       });
-      setSubmitted(false);
-    }, 3000);
   };
 
   const services = [
     "Exterior Detailing",
     "Interior Detailing",
-    "Machine Cut & Polish",
-    "Ceramic Coating",
-    "Paint Protection Film",
-    "Headlight Restoration",
-    "Engine Bay Detailing",
+    "Paint Correction",
+    "Minor Dent removal ",
+    "Headlight restoration",
+    "Engine bay wash",
+    "Odour Removal",
   ];
 
   const containerVariants = {
@@ -69,7 +93,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black py-16 font-[Poppins]">
+    <div className="min-h-screen bg-black py-16 font-[Inter]">
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"
@@ -79,7 +103,7 @@ const ContactPage = () => {
         >
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-center mb-16 text-red-600 mt-20"
+            className="text-4xl md:text-5xl xl:text-7xl font-bold text-center mb-16 text-red-600 mt-20"
           >
             Get in <span className="text-blue-100">Touch</span>
           </motion.h1>
@@ -92,8 +116,10 @@ const ContactPage = () => {
                 className="w-full md:w-5/12 relative"
               >
                 <div className="absolute inset-0 bg-black/50 z-10 flex flex-col justify-end p-8 text-white">
-                  <h3 className="text-2xl font-bold mb-4">PremiumDetail</h3>
-                  <div className="space-y-4">
+                  <h3 className="text-3xl font-bold mb-4">
+                    Sparkling Car Care
+                  </h3>
+                  <div className="space-y-4 text-xl">
                     <div className="flex items-center space-x-3">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +141,7 @@ const ContactPage = () => {
                           d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                         />
                       </svg>
-                      <p>123 Luxury Lane, Beverly Hills, CA 90210</p>
+                      <p> 77/81 Reserve Rd, Artarmon NSW 2064</p>
                     </div>
                     <div className="flex items-center space-x-3">
                       <svg
@@ -132,7 +158,7 @@ const ContactPage = () => {
                           d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                         />
                       </svg>
-                      <p>(555) 123-4567</p>
+                      <p> (02) 9438 4988</p>
                     </div>
                     <div className="flex items-center space-x-3">
                       <svg
@@ -149,7 +175,7 @@ const ContactPage = () => {
                           d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                         />
                       </svg>
-                      <p>info@premiumautospa.com</p>
+                      <p>sparklingcarcare1@gmail.com </p>
                     </div>
                     <div className="flex items-center space-x-3">
                       <svg
@@ -166,13 +192,14 @@ const ContactPage = () => {
                           d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                         />
                       </svg>
-                      <p>Mon-Sat: 8AM - 7PM, Sun: 10AM - 5PM</p>
+                      <p>Mon-Fri: 10AM - 6PM, Sat: 10AM - 3PM</p>
                     </div>
                   </div>
 
                   <div className="mt-8 flex space-x-4">
                     <a
-                      href="#"
+                      href="https://www.facebook.com/profile.php?id=61574501624415 "
+                      target="_blank"
                       className="h-10 w-10 rounded-full bg-white/20 hover:bg-blue-600 flex items-center justify-center transition duration-300"
                     >
                       <span className="sr-only">Facebook</span>
@@ -190,7 +217,8 @@ const ContactPage = () => {
                       </svg>
                     </a>
                     <a
-                      href="#"
+                      href="https://www.instagram.com/sparklingcarcare_/ "
+                      target="_blank"
                       className="h-10 w-10 rounded-full bg-white/20 hover:bg-blue-600 flex items-center justify-center transition duration-300"
                     >
                       <span className="sr-only">Instagram</span>
@@ -208,18 +236,12 @@ const ContactPage = () => {
                       </svg>
                     </a>
                     <a
-                      href="#"
+                      href="https://www.tiktok.com/@sparklingcarcare_ "
+                      target="_blank"
                       className="h-10 w-10 rounded-full bg-white/20 hover:bg-blue-600 flex items-center justify-center transition duration-300"
                     >
-                      <span className="sr-only">Twitter</span>
-                      <svg
-                        className="h-5 w-5"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                      >
-                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                      </svg>
+                      <span className="sr-only">TikTok</span>
+                      <FaTiktok />
                     </a>
                   </div>
                 </div>
@@ -270,7 +292,11 @@ const ContactPage = () => {
                     </p>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form
+                    ref={form}
+                    onSubmit={handleSubmit}
+                    className="space-y-6"
+                  >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <motion.div
                         variants={itemVariants}
@@ -426,17 +452,17 @@ const ContactPage = () => {
                           className="w-full h-10 border-2 border-gray-300 rounded-lg bg-white px-3 text-gray-900 appearance-none focus:outline-none focus:border-blue-600"
                         >
                           <option value="">Select a time</option>
-                          <option value="Morning (8AM-11AM)">
-                            Morning (8AM-11AM)
+                          <option value="Morning (10AM-12PM)">
+                            Morning (10AM-12PM)
                           </option>
-                          <option value="Midday (11AM-2PM)">
-                            Midday (11AM-2PM)
+                          <option value="Midday (12PM-2PM)">
+                            Midday (12PM-2PM)
                           </option>
-                          <option value="Afternoon (2PM-5PM)">
-                            Afternoon (2PM-5PM)
+                          <option value="Afternoon (2PM-4PM)">
+                            Afternoon (2PM-4PM)
                           </option>
-                          <option value="Evening (5PM-7PM)">
-                            Evening (5PM-7PM)
+                          <option value="Evening (4PM-6PM)">
+                            Evening (4PM-6PM)
                           </option>
                         </select>
                         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 pt-6">
@@ -472,28 +498,64 @@ const ContactPage = () => {
                       </label>
                     </motion.div>
 
+                    {error && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="text-red-500 text-sm bg-red-100 p-3 rounded-lg"
+                      >
+                        {error}
+                      </motion.div>
+                    )}
+
                     <motion.button
                       variants={itemVariants}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       type="submit"
-                      className="w-full py-3 bg-blue-600 text-white font-medium rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center space-x-2"
+                      disabled={loading}
+                      className="w-full py-3 bg-blue-600 text-white font-medium rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center space-x-2 disabled:bg-blue-400"
                     >
-                      <span>Schedule Appointment</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                      {loading ? (
+                        <svg
+                          className="animate-spin h-5 w-5 text-white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                      ) : (
+                        <>
+                          <span>Schedule Appointment</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </>
+                      )}
                     </motion.button>
                   </form>
                 )}
@@ -504,20 +566,19 @@ const ContactPage = () => {
           <motion.div variants={itemVariants} className="mt-16 text-center">
             <h2 className="text-5xl font-bold text-red-100 mb-8">Find Us</h2>
             <div className="bg-white rounded-xl shadow-lg h-64 overflow-hidden">
-              {/* This would be a map in a real implementation */}
               <div className="rounded-lg overflow-hidden shadow-md h-64">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369674847443!3d40.71277447933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s123%20Street%2C%20New%20York%2C%20NY%2010006!5e0!3m2!1sen!2sus!4v1648482801382!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Google Maps"
-              className="w-full h-full"
-            ></iframe>
-          </div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4130.627978734494!2d151.1870256!3d-33.8158916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12aed8a0f7fcb9%3A0x75b682048520f614!2sSparkling%20Car%20Care!5e1!3m2!1sen!2slk!4v1743506974028!5m2!1sen!2slk"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Maps"
+                  className="w-full h-full"
+                ></iframe>
+              </div>
             </div>
           </motion.div>
         </motion.div>

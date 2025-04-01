@@ -28,51 +28,95 @@ const packagePage = () => {
   const servicePackages = [
     {
       id: 1,
-      title: "Basic Detail",
-      price: "$99",
-      icon: <Car className="w-8 h-8 text-blue-500" />,
+      title: "Express Wash:",
+      price: "$30 Sedan / $40 SUV",
+      icon: <Sparkles  className="w-8 h-8 text-blue-500" />,
       description:
-        "Exterior wash, wheel cleaning, tire shine, and basic interior cleaning.",
+        "A quick and efficient exterior clean, including a hand wash, chamois dry, and tyre shine to give your car a refreshed look.",
       features: [
-        "Exterior Hand Wash",
-        "Interior Vacuum",
-        "Dashboard Wipe",
-        "Window Cleaning",
-        "Tire Dressing",
+        "Wash Exterior and Chamois",
+        "Tyre Shine"
       ],
       image:
-        "https://static.vecteezy.com/system/resources/thumbnails/052/084/075/small_2x/professional-detailing-a-car-in-car-studio-hands-with-orbital-polisher-scratching-remover-vehicle-care-concept-photo.jpeg", // Added image path
+        "https://i0.wp.com/peaceentqatar.com/wp-content/uploads/2019/07/17545524_140141669847553_5202430352564902303_o-1.jpg?ssl=1", // Added image path
     },
     {
       id: 2,
-      title: "Premium Detail",
-      price: "$199",
-      icon: <Shield className="w-8 h-8 text-blue-500" />,
+      title: "Basic Wash:",
+      price: "$40 Sedan / $50 SUV",
+      icon: <Sparkles  className="w-8 h-8 text-blue-500" />,
       description:
-        "Complete interior and exterior detailing with premium products and wax protection.",
+        "Includes everything in the Express Wash plus an interior vacuum to remove dust and debris, keeping both the inside and outside of your car looking neat.",
       features: [
-        "Everything in Basic",
-        "Clay Bar Treatment",
-        "Carnauba Wax",
-        "Leather Conditioning",
-        "Engine Bay Cleaning",
+        "Wash Exterior and Chamois",
+        "Interior Vacuum",
+        "Tyre Shine"
       ],
       image:
-        "https://titomobiledetailingwa.com/wp-content/uploads/2024/02/Car-Detailing-Washington.jpg", // Added image path
+        "https://media.istockphoto.com/id/826875544/photo/high-pressure-washing-car-outdoors.jpg?s=612x612&w=0&k=20&c=VWs9auj2wJpOEXSe4ZC5XVHFCOpOHIbkFHLnZY2-Q1M=", // Added image path
     },
     {
       id: 3,
-      title: "Ultimate Detail",
-      price: "$299",
+      title: "Standard Wash:",
+      price: "$60 Sedan / $70 SUV",
       icon: <Sparkles className="w-8 h-8 text-blue-500" />,
       description:
-        "The ultimate car detailing package with ceramic coating and premium interior restoration.",
+        "A thorough clean that covers the exterior, interior vacuuming, window cleaning, and trim wipe-down, ensuring a polished and well-maintained look inside and out.",
       features: [
-        "Everything in Premium",
-        "Ceramic Coating",
-        "Paint Correction",
-        "Headlight Restoration",
-        "Fabric Protection",
+        "Wash Exterior and Chamois",
+        "Interior Vacuum",
+        "Windows Cleaned",
+        "Wipe Down Trims",
+        "Tyre Shine",
+      ],
+      image:
+        "https://shop.rikecool.com.sg/wp-content/uploads/2023/09/car-wash-detailing-station_1303-22319.jpg", // Added image path
+    },
+    {
+      id: 4,
+      title: "Deluxe Wash:",
+      price: "$132 Sedan / $165 SUV",
+      icon: <Shield className="w-8 h-8 text-blue-500" />,
+      description:
+        "A premium wash package that includes everything in the Standard Wash, plus a professional hand polish to restore shine and enhance your vehicle’s appearance.",
+      features: [
+        "Wash Exterior and Chamois",
+        "Interior Vacuum",
+        "Windows Cleaned",
+        "Wipe Down Trims",
+        "Tyre Shine",
+        "Hand Polish"
+      ],
+      image:
+        "https://www.jalopnik.com/jalopnik/images/b5b2550c72d99e5dcb0bbd70c28a1495.jpg", // Added image path
+    },
+    {
+      id: 5,
+      title: "Mini Detail:",
+      price: "$198 Sedan / $250 SUV",
+      icon: <Car className="w-8 h-8 text-blue-500" />,
+      description:
+        "A deep cleaning package that combines the Standard Wash with a high-quality hand polish and an engine bay wash, ensuring a spotless and glossy finish.",
+      features: [
+        "Standard Wash +",
+        "Hand Polish",
+        "Engine Bay Wash"
+      ],
+      image:
+        "https://www.momscardetailing.com/wp-content/uploads/2025/03/104202763_1708027612681300_7224795719929665443_n-1-rotated.jpg", // Added image path
+    },
+    {
+      id: 6,
+      title: "Full Detail:",
+      price: "$298 Sedan / $350 SUV",
+      icon: <Car className="w-8 h-8 text-blue-500" />,
+      description:
+        "The ultimate detailing service, featuring a Standard Wash, engine bay wash, deep interior shampooing, and a two-step paint correction to remove imperfections and restore your car’s paint to a flawless shine.",
+      features: [
+        "Standard Wash +",
+        "Engine Bay Wash",
+        "Shampoo Interior",
+        "Two Step Paint Correction "
       ],
       image:
         "https://www.cartoys.com/cdn/shop/files/Car_detailing_ServiceSection_512x300_2dd1ef7e-4b4d-45aa-90f5-650d299dd56e.jpg?v=1694798075&width=512", // Added image path
@@ -80,7 +124,7 @@ const packagePage = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen font-[Poppins]">
+    <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen font-[Inter]">
       {/* Hero Section */}
       <div className="relative h-96 bg-gray-900 overflow-hidden">
         <img
@@ -95,19 +139,21 @@ const packagePage = () => {
             transition={{ duration: 0.7 }}
             className="text-center text-white p-8"
           >
-            <h1 className="text-5xl font-bold mb-4 mt-20 ">
+            <h1 className="text-7xl font-bold  mb-4 mt-30 ">
               Professional Car Detailing
             </h1>
-            <p className="text-xl mb-8">
+            <p className="text-2xl mb-8">
               Restore your vehicle to showroom condition
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium"
-            >
-              Book Now
-            </motion.button>
+            <a href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium cursor-pointer"
+              >
+                Book Now
+              </motion.button>
+            </a>
           </motion.div>
         </div>
       </div>
@@ -120,8 +166,8 @@ const packagePage = () => {
           transition={{ duration: 0.7 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl font-bold mb-4">Our Detailing Services</h2>
-          <p className="text-gray-600">
+          <h2 className="text-4xl font-bold mb-4">Our Detailing Services</h2>
+          <p className="text-gray-600 text-xl">
             We offer a comprehensive range of car detailing services tailored to
             meet your needs. From basic cleaning to premium restoration, our
             skilled technicians deliver exceptional results.
@@ -156,11 +202,11 @@ const packagePage = () => {
                     {pkg.price}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold mb-2">{pkg.title}</h3>
-                <p className="text-gray-600 mb-6">{pkg.description}</p>
+                <h3 className="text-2xl font-bold mb-2">{pkg.title}</h3>
+                <p className="text-gray-600 mb-6 text-xl">{pkg.description}</p>
                 <ul className="space-y-2 mb-6">
                   {pkg.features.map((feature, index) => (
-                    <li key={index} className="flex items-center text-gray-700">
+                    <li key={index} className="flex items-center text-gray-700 text-xl">
                       <Star className="w-4 h-4 text-blue-500 mr-2" />
                       {feature}
                     </li>
@@ -232,7 +278,7 @@ const packagePage = () => {
                 <h3 className="text-3xl font-bold mb-2 text-white">
                   {step.title}
                 </h3>
-                <p className="text-gray-300">{step.description}</p>
+                <p className="text-gray-300 text-xl">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -252,17 +298,22 @@ const packagePage = () => {
             <h2 className="text-3xl font-bold mb-4">
               Ready to Transform Your Vehicle?
             </h2>
-            <p className="text-blue-100 mb-8">
+            <p className="text-blue-100 mb-8 text-xl">
               Book your appointment today and experience our premium detailing
               services.
             </p>
+
+            <a href="/contact">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-blue-600 px-10 py-4 rounded-full font-medium text-lg"
+              className="bg-white text-blue-600 px-10 py-4 rounded-full font-bold  cursor-pointer text-lg"
             >
               Book an Appointment
             </motion.button>
+            
+            </a>
+            
           </motion.div>
         </div>
       </div>

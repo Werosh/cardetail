@@ -6,13 +6,13 @@ const OpeningHours = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const hoursData = [
-    { day: "Monday", hours: "8:00 AM - 7:00 PM" },
-    { day: "Tuesday", hours: "8:00 AM - 7:00 PM" },
-    { day: "Wednesday", hours: "8:00 AM - 7:00 PM" },
-    { day: "Thursday", hours: "8:00 AM - 7:00 PM" },
-    { day: "Friday", hours: "8:00 AM - 7:00 PM" },
-    { day: "Saturday", hours: "8:00 AM - 7:00 PM" },
-    { day: "Sunday", hours: "10:00 AM - 5:00 PM" }
+    { day: "Monday", hours: "10:00 AM - 6:00 PM" },
+    { day: "Tuesday", hours: "10:00 AM - 6:00 PM" },
+    { day: "Wednesday", hours: "10:00 AM - 6:00 PM" },
+    { day: "Thursday", hours: "10:00 AM - 6:00 PM" },
+    { day: "Friday", hours: "10:00 AM - 6:00 PM" },
+    { day: "Saturday", hours: "10:00 AM - 3:00 PM" },
+    { day: "Sunday", hours: "Closed" }
   ];
   
   const getCurrentDay = () => {
@@ -26,7 +26,7 @@ const OpeningHours = () => {
     const day = getCurrentDay();
     const dayData = hoursData.find(d => d.day === day);
     
-    if (!dayData) return "Closed";
+    if (!dayData || dayData.hours === "Closed") return "Closed";
     
     const hours = now.getHours();
     const minutes = now.getMinutes();
@@ -55,7 +55,7 @@ const OpeningHours = () => {
   };
   
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-6 right-6 z-50 font-[Inter]">
       <AnimatePresence>
         {isOpen && (
           <motion.div

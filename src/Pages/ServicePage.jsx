@@ -1,71 +1,107 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const ServicePage = () => {
   const services = [
     {
       id: 1,
       title: "Exterior Detailing",
-      description: "Our exterior detailing service goes beyond a simple car wash. We meticulously clean, restore, and protect your vehicle's exterior surfaces. This includes clay bar treatment to remove embedded contaminants, hand polishing to restore shine, paint protection application, wheel and tire cleaning, and trim restoration. Experience the difference as your vehicle shines like never before.",
-      imageUrl: "https://dpkoly04s20lw.cloudfront.net/resources/services/Exterior%20Car%20Detailing,%20Polishing%20_%20Cleaning-min.jpg",
-      imagePosition: "left"
+      description:
+        "Our exterior detailing service brings your vehicle’s shine back to life. We remove dirt, grime, and contaminants with a thorough wash, followed by hand waxing or machine polishing to protect your paint and enhance gloss. It’s more than a wash—it’s a full rejuvenation of your car’s outer appearance.",
+      imageUrl:
+        "https://dpkoly04s20lw.cloudfront.net/resources/services/Exterior%20Car%20Detailing,%20Polishing%20_%20Cleaning-min.jpg",
+      imagePosition: "left",
     },
     {
       id: 2,
       title: "Interior Detailing",
-      description: "Transform your vehicle's cabin with our comprehensive interior detailing service. We thoroughly clean and sanitize all surfaces, including hard-to-reach areas, using premium products. Our service includes vacuuming and steam cleaning upholstery, leather conditioning, dashboard and console detailing, glass cleaning, and odor elimination treatments. Enjoy that new car feeling again with our meticulous interior care.",
-      imageUrl: "https://surfnshine.com/wp-content/uploads/2023/10/interior-detailing.jpg",
-      imagePosition: "right"
+      description:
+        "We deep clean every corner of your vehicle’s interior, from seats and carpets to dashboards and vents. Whether it's leather, fabric, or plastic, we restore, sanitise, and refresh surfaces to a like-new condition. Enjoy that fresh car feel every time you step inside.",
+      imageUrl:
+        "https://surfnshine.com/wp-content/uploads/2023/10/interior-detailing.jpg",
+      imagePosition: "right",
     },
     {
       id: 3,
-      title: "Machine Cut & Polish",
-      description: "Restore your vehicle's paintwork to showroom condition with our professional machine cut and polish service. Our skilled technicians use advanced dual-action polishers and premium compounds to remove swirl marks, scratches, oxidation, and water spots. This multi-stage process enhances your paint's depth and gloss, revealing its true brilliance. Perfect for vehicles with dull or damaged paintwork.",
-      imageUrl: "https://cdn.shopify.com/s/files/1/0797/2968/8869/files/a5.jpg?v=1692785397&width=1620&height=1080",
-      imagePosition: "left"
+      title: "Paint Correction",
+      description:
+        "Restore your car’s finish with our professional paint correction. We carefully remove swirl marks, scratches, and oxidation to bring out a flawless, high-gloss shine. Perfect for vehicles needing that extra level of care.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0797/2968/8869/files/a5.jpg?v=1692785397&width=1620&height=1080",
+      imagePosition: "left",
     },
     {
       id: 4,
-      title: "Ceramic Coating",
-      description: "Our ceramic coating service provides long-lasting protection and enhanced gloss to your vehicle's paintwork. This advanced nanotechnology forms a chemical bond with your car's paint, creating a hydrophobic, UV-resistant shield that lasts for years. Benefits include superior protection against environmental contaminants, easier cleaning, enhanced gloss, and increased resale value. Experience the ultimate in paint protection technology.",
-      imageUrl: "https://autoimage.capitalone.com/cms/Auto/assets/images/1398-hero-what-is-ceramic-coating.jpg",
-      imagePosition: "right"
-    }
+      title: "Minor Dent removal ",
+      description:
+        "Got a dent or ding? Our minor dent removal service targets those small imperfections without needing a full panel respray. Using precision techniques, we restore your vehicle’s smooth finish quickly and affordably.",
+      imageUrl:
+        "https://chicagoautohaus.com/wp-content/uploads/2023/10/dent-removal-on-car-1024x574.png",
+      imagePosition: "right",
+    },
+    {
+      id: 5,
+      title: "Headlight restoration",
+      description:
+        "Cloudy, yellow headlights can reduce both visibility and the look of your vehicle. Our headlight restoration service clears up foggy lenses and protects them, improving nighttime driving safety and the overall look of your car.",
+      imageUrl:
+        "https://t4.ftcdn.net/jpg/10/82/54/77/360_F_1082547727_c5o8rAUG7z9fPxfOuch8iAroelPFJebt.jpg",
+      imagePosition: "left",
+    },
+    {
+      id: 6,
+      title: "Engine bay wash ",
+      description:
+        "A clean engine bay not only looks impressive but also helps with maintenance and spotting issues early. We carefully degrease and rinse your engine compartment, taking care not to damage sensitive components.",
+      imageUrl:
+        "https://www.3dcarcaremiami.com/cdn/shop/articles/Engine_pic_blog_1140x.webp?v=1674779209",
+      imagePosition: "right",
+    },
+    {
+      id: 7,
+      title: "Odour Removal",
+      description:
+        "Say goodbye to stubborn smells with our professional odour removal service. Whether it’s smoke, pet, food, or mildew, we target and neutralize the source—not just mask it. Your vehicle will be left smelling clean, fresh, and truly revitalized.",
+      imageUrl:
+        "https://www.thedetailingexperts.com.au/wp-content/uploads/2022/04/Mass-blog-header-template-01-2.png",
+      imagePosition: "left",
+    },
   ];
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   return (
-    <div className="bg-gradient-to-b from-slate-50 to-slate-100 min-h-screen">
+    <div className="bg-gradient-to-b from-slate-50 to-slate-100 min-h-screen font-[Inter]">
       {/* Hero Section */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="relative h-96 bg-black overflow-hidden"
       >
         <div className="absolute inset-0 bg-black/60 z-10"></div>
-        <div className="absolute inset-0 bg-[url('/api/placeholder/1920/1080')] bg-cover bg-center"></div>
+        <div className="absolute inset-0  bg-cover bg-center"></div>
         <div className="container mx-auto px-4 h-full flex items-center relative z-20">
           <div className="max-w-2xl">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4"
             >
               Premium Detailing Services
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-lg md:text-xl text-gray-200"
             >
-              Experience automotive perfection with our professional detailing services.
+              Experience automotive perfection with our professional detailing
+              services.
             </motion.p>
           </div>
         </div>
@@ -73,7 +109,7 @@ const ServicePage = () => {
 
       {/* Services Section */}
       <div className="container mx-auto px-4 py-16">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -91,33 +127,44 @@ const ServicePage = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
-              className={`flex flex-col ${service.imagePosition === 'right' ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}
+              className={`flex flex-col ${
+                service.imagePosition === "right"
+                  ? "md:flex-row"
+                  : "md:flex-row-reverse"
+              } gap-8 items-center`}
             >
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="flex-1"
               >
                 <div className="rounded-xl overflow-hidden shadow-2xl">
-                  <img 
-                    src={service.imageUrl} 
-                    alt={service.title} 
+                  <img
+                    src={service.imageUrl}
+                    alt={service.title}
                     className="w-full h-64 md:h-80 object-cover"
                   />
                 </div>
               </motion.div>
 
               <div className="flex-1 space-y-4">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-800">{service.title}</h3>
+                <h3 className="text-2xl md:text-3xl xl:text-4xl font-bold text-gray-800">
+                  {service.title}
+                </h3>
                 <div className="w-20 h-1 bg-blue-600"></div>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300 shadow-lg"
-                >
-                  Learn More
-                </motion.button>
+                <p className="text-gray-600 leading-relaxed text-xl">
+                  {service.description}
+                </p>
+
+                <a href="/packages">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="mt-4 px-6 py-3 bg-blue-600 cursor-pointer text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300 shadow-lg"
+                  >
+                    Learn More
+                  </motion.button>
+                </a>
               </div>
             </motion.div>
           ))}
@@ -125,24 +172,30 @@ const ServicePage = () => {
       </div>
 
       {/* CTA Section */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         className="bg-gradient-to-r from-[#0f0c29] to-[#24243e] via-[#302b63]py-16 mt-16"
       >
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Ready to Transform Your Vehicle?</h2>
-          <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-            Schedule your premium detailing service today and experience the difference our professional care makes.
+          <h2 className="text-3xl font-bold text-white mb-6">
+            Ready to Transform Your Vehicle?
+          </h2>
+          <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-xl">
+            Schedule your premium detailing service today and experience the
+            difference our professional care makes.
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-white text-blue-600 rounded-lg font-bold hover:bg-gray-100 transition duration-300 shadow-lg"
-          >
-            Book Your Appointment
-          </motion.button>
+
+          <a href="/contact">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-white cursor-pointer text-blue-600 rounded-lg font-bold hover:bg-gray-100 transition duration-300 shadow-lg mb-5"
+            >
+              Book Your Appointment
+            </motion.button>
+          </a>
         </div>
       </motion.div>
     </div>

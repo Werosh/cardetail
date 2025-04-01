@@ -69,7 +69,7 @@ const Home = () => {
             className="text-center flex flex-col items-center justify-center"
           >
             <h1 className="text-5xl xl:text-9xl lg:text-7xl md:text-7xl font-bold mb-4 ">
-              Premium Car Detailing
+            Sparkling Car Care
             </h1>
             <p className="text-2xl font-[Inter]  mb-8 max-w-2xl  py-2  bg-gradient-to-b from-transparent to-[#6441A5] rounded-bl-[80px] rounded-br-[80px]  px-5">
               Professional detailing services that bring your vehicle back to
