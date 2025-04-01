@@ -64,7 +64,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 font-[Poppins]">
+    <div className="min-h-screen bg-gray-900 font-[Poppins]">
       {/* Hero Section */}
       <section className="relative h-screen bg-black">
         {/* Background image with overlay */}
@@ -321,8 +321,6 @@ const Home = () => {
 
       {/* Location Section */}
       <LocationSection />
-
-      
     </div>
   );
 };
