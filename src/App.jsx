@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import ServicePage from './Pages/ServicePage'
 import Footer from './components/Footer'
 import { AnimatePresence, motion } from 'framer-motion'
+import OpeningHours from './components/OpeningHours '
 
 // Wrapper component for the page transitions
 const PageTransition = ({ children }) => {
@@ -33,6 +34,7 @@ const App = () => {
     <Router>
       <div>
         <Navbar />
+        <OpeningHours />
         <div className="relative overflow-hidden">
           <PageTransition>
             <Routes>

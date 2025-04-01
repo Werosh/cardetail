@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const SlidingGallery = () => {
   // Sample gallery images with random heights
@@ -63,120 +64,168 @@ const SlidingGallery = () => {
       alt: "Landscape design 4",
     },
   ];
+  
   const rowThreeImages = [
     {
-      id: 7,
+      id: 13,
       url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpvzYQ6-tYSh6ce1MCqNmIeuliJ5z9ICKDTw&s",
-      alt: "Architecture project 3",
+      alt: "Architecture project 5",
     },
     {
-      id: 8,
+      id: 14,
       url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpxm89YnTJ1E6Bp7H_NwzlHYa_KwmQUhvSPQ&s",
-      alt: "Interior design 3",
+      alt: "Interior design 5",
     },
     {
-      id: 9,
+      id: 15,
       url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUrwxvY4QgkvPOX9kIlW_u_A7e2Dz3LVMtqg&s",
-      alt: "Landscape design 3",
+      alt: "Landscape design 5",
     },
     {
-      id: 10,
+      id: 16,
       url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFCT6wQO8z3juTv6hyb9N8vu6wb4s1EJZsJA&s",
-      alt: "Architecture project 4",
+      alt: "Architecture project 6",
     },
     {
-      id: 11,
+      id: 17,
       url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjjVCFnkPjpTELrrwX6-eCCXpMB4DaxReviAJXIru1zbQOh92UudXMn3CXpi-_f-3MkKk&usqp=CAU",
-      alt: "Interior design 4",
+      alt: "Interior design 6",
     },
     {
-      id: 12,
+      id: 18,
       url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBfA1G-NGbxFIIzaogpgGxLHmkqwXtX0pG1A&s",
-      alt: "Landscape design 4",
+      alt: "Landscape design 6",
     },
   ];
 
+  // Refs for the image rows
+  const row1Ref = useRef(null);
+  const row2Ref = useRef(null);
+  const row3Ref = useRef(null);
+
+  // Function to handle scrolling
+  const scroll = (direction, rowRef) => {
+    if (rowRef.current) {
+      const scrollAmount = direction === 'left' ? -300 : 300;
+      const container = rowRef.current;
+      
+      // Calculate new scroll position
+      const newScrollPosition = container.scrollLeft + scrollAmount;
+      
+      // For infinite scrolling, check if we're at the edges
+      if (direction === 'right' && newScrollPosition + container.clientWidth >= container.scrollWidth) {
+        container.scrollLeft = 0; // Reset to beginning when reaching the end
+      } else if (direction === 'left' && newScrollPosition <= 0) {
+        container.scrollLeft = container.scrollWidth; // Go to end when at beginning
+      } else {
+        container.scrollLeft = newScrollPosition;
+      }
+    }
+  };
+
   return (
-    <section className="overflow-hidden bg-black">
+    <section className="bg-black">
       <div className="max-w-full">
         <h2 className="text-3xl font-bold text-center mb-6 mt-10 text-amber-50">Our Work</h2>
 
-        {/* First row sliding left to right */}
-        <div className="relative overflow-hidden">
-          <div className="flex animate-slide-left">
-            {/* Double the images to create seamless loop */}
+        {/* First row with manual navigation */}
+        <div className="relative mb-6">
+          <div 
+            ref={row1Ref} 
+            className="flex overflow-x-auto scrollbar-hide scroll-smooth" 
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
             {[...rowOneImages, ...rowOneImages].map((image, index) => (
               <div key={`${image.id}-${index}`} className="flex-shrink-0">
                 <img
                   src={image.url}
                   alt={image.alt}
-                  className="w-64 h-48 object-cover"
+                  className="w-64 h-64 object-cover"
                 />
               </div>
             ))}
           </div>
+          <button 
+            onClick={() => scroll('left', row1Ref)}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button 
+            onClick={() => scroll('right', row1Ref)}
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white"
+          >
+            <ChevronRight size={24} />
+          </button>
         </div>
 
-        {/* Second row sliding right to left */}
-        <div className="relative overflow-hidden">
-          <div className="flex animate-slide-right">
-            {/* Double the images to create seamless loop */}
+        {/* Second row with manual navigation */}
+        <div className="relative mb-6">
+          <div 
+            ref={row2Ref} 
+            className="flex overflow-x-auto scrollbar-hide scroll-smooth" 
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
             {[...rowTwoImages, ...rowTwoImages].map((image, index) => (
               <div key={`${image.id}-${index}`} className="flex-shrink-0">
                 <img
                   src={image.url}
                   alt={image.alt}
-                  className="w-64 h-48 object-cover"
+                  className="w-64 h-64 object-cover"
                 />
               </div>
             ))}
           </div>
+          <button 
+            onClick={() => scroll('left', row2Ref)}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button 
+            onClick={() => scroll('right', row2Ref)}
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white"
+          >
+            <ChevronRight size={24} />
+          </button>
         </div>
 
-        {/* Third row sliding left to right */}
-        <div className="relative overflow-hidden">
-          <div className="flex animate-slide-left">
-            {/* Double the images to create seamless loop */}
+        {/* Third row with manual navigation */}
+        <div className="relative mb-6">
+          <div 
+            ref={row3Ref} 
+            className="flex overflow-x-auto scrollbar-hide scroll-smooth" 
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
             {[...rowThreeImages, ...rowThreeImages].map((image, index) => (
               <div key={`${image.id}-${index}`} className="flex-shrink-0">
                 <img
                   src={image.url}
                   alt={image.alt}
-                  className="w-64 h-48 object-cover"
+                  className="w-64 h-64 object-cover"
                 />
               </div>
             ))}
           </div>
+          <button 
+            onClick={() => scroll('left', row3Ref)}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button 
+            onClick={() => scroll('right', row3Ref)}
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white"
+          >
+            <ChevronRight size={24} />
+          </button>
         </div>
-
-       
       </div>
 
       <style jsx>{`
-        @keyframes slide-left {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        @keyframes slide-right {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
-        }
-
-        .animate-slide-left {
-          animation: slide-left 30s linear infinite;
-        }
-
-        .animate-slide-right {
-          animation: slide-right 30s linear infinite;
+        /* Hide scrollbar for all browsers */
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
         }
       `}</style>
     </section>
