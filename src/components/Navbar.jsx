@@ -22,7 +22,7 @@ const Navbar = () => {
       transition={{ type: "spring", stiffness: 100 }}
     >
       <div
-        className={`max-w-7xl mx-auto px-6  rounded-4xl font-[Inter] ${
+        className={`max-w-7xl mx-auto px-6  rounded-4xl font-sans ${
           scrolled ? "bg-black" : "bg-black/60"
         }`}
       >
@@ -85,7 +85,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation with shine effect */}
           <div className=" hidden md:flex md:items-center md:space-x-8 xl:items-center bg-gray-600/70 p-5 rounded-bl-4xl rounded-tr-4xl shadow-lg text-amber-50 font-semibold">
-            <NavLink href="/" text="Home"  />
+            <NavLink href="/" text="Home" />
             <NavLink href="/services" text="Services" />
             <NavLink href="/packages" text="Packages" />
             <NavLink href="/contact" text="Contact" />
@@ -145,7 +145,7 @@ const Navbar = () => {
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
         >
-          <div className="px-4 py-6 space-y-3 bg-gradient-to-b from-blue-800 via-blue-700 to-blue-600 rounded-b-3xl shadow-xl font-[Inter]">
+          <div className="px-4 py-6 space-y-3 bg-gradient-to-b from-blue-800 via-blue-700 to-blue-600 rounded-b-3xl shadow-xl font-sans">
             <MobileNavLink
               href="/"
               text="Home"

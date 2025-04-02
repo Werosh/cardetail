@@ -27,30 +27,46 @@ const Home = () => {
   const reviews = [
     {
       id: 1,
-      name: "John D.",
+      name: "Ben Hoskins",
       rating: 5,
-      text: "My car looks brand new! Professional service and attention to detail.",
+      text: "I highly recommend these guys! Just picked up my car and it genuinely looks brand new. And when I left it with them it was in a sorry state.Service, attention to detail and value for money all outstanding. Thanks team!",
     },
     {
       id: 2,
-      name: "Sarah M.",
+      name: "Nicole B.",
       rating: 5,
-      text: "Best detailing service in town. Worth every penny!",
+      text: "Completely satisfied and impressed with the thorough internal and external cleaning done on my car today.   Thank you.  Nicole Bannister -- BDU 73H - Impreza RX - 19/03/2024",
     },
     {
       id: 3,
-      name: "Mike T.",
-      rating: 4,
-      text: "Great work, very thorough and reasonably priced.",
+      name: "Andrew Met.",
+      rating: 5,
+      text: "Wow. Eddie really is amazing at what he does! I took my 21 year old Landcruiser to Eddie for a polish after a large weekend offroad. When I picked up the 4WD at 5pm it was sparkling like a brand new 4WD. Thank you. Andrew",
+    },
+    {
+      id: 4,
+      name: "Michael Li",
+      rating: 5,
+      text: "Beautiful service. Got the full detail and car came back looking brand new! 10/10 definitely would recommend.",
+    },
+    {
+      id: 5,
+      name: "Vanessa Ho",
+      rating: 5,
+      text: "Very lovely service. Worth the money. Went in for a full detail and was very pleased. Definitely coming back!",
+    },
+    {
+      id: 6,
+      name: "Jatay",
+      rating: 5,
+      text: "These guys do a fantastic job. Inside and out the car looked brand new. Didn't take long and were so easy to deal with. I'll be back again, and will remember to leave the car keys next time!",
     },
   ];
 
- 
-
   return (
-    <div className="min-h-screen bg-gray-900 font-[Inter]">
+    <div className="min-h-screen bg-gray-900 font-sans">
       {/* Hero Section */}
-      <section className="relative h-screen bg-black font-[Inter]">
+      <section className="relative h-screen bg-black font-sans">
         {/* Background image with overlay */}
         <div className="absolute inset-0 bg-black/50 z-10">
           <img
@@ -69,9 +85,9 @@ const Home = () => {
             className="text-center flex flex-col items-center justify-center"
           >
             <h1 className="text-5xl xl:text-9xl lg:text-7xl md:text-7xl font-bold mb-4 ">
-            Sparkling Car Care
+              Sparkling Car Care
             </h1>
-            <p className="text-2xl font-[Inter]  mb-8 max-w-2xl  py-2  bg-gradient-to-b from-transparent to-[#6441A5] rounded-bl-[80px] rounded-br-[80px]  px-5">
+            <p className="text-2xl font-sans  mb-8 max-w-2xl  py-2  bg-gradient-to-b from-transparent to-[#6441A5] rounded-bl-[80px] rounded-br-[80px]  px-5">
               Professional detailing services that bring your vehicle back to
               showroom condition.
             </p>
@@ -112,13 +128,7 @@ const Home = () => {
 
       {/* Services Section */}
 
-
-      <AboutUsSection/>
-
-
-
-
-
+      <AboutUsSection />
 
       {/* Reviews Section */}
 

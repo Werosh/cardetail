@@ -93,7 +93,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black py-16 font-[Inter]">
+    <div className="min-h-screen bg-black py-16 font-sans">
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"
@@ -568,7 +568,7 @@ const ContactPage = () => {
             <div className="bg-white rounded-xl shadow-lg h-64 overflow-hidden">
               <div className="rounded-lg overflow-hidden shadow-md h-64">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4130.627978734494!2d151.1870256!3d-33.8158916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12aed8a0f7fcb9%3A0x75b682048520f614!2sSparkling%20Car%20Care!5e1!3m2!1sen!2slk!4v1743506974028!5m2!1sen!2slk"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4130.627978734494!2d151.1870256!3d-33.8158916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12aed8a0f7fcb9%3A0x75b682048520f614!2sSparkling%20Car%20Care!5e0!3m2!1sen!2slk!4v1743506974028!5m2!1sen!2slk"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

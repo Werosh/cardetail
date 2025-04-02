@@ -74,7 +74,7 @@ const ServicePage = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-slate-50 to-slate-100 min-h-screen font-[Inter]">
+    <div className="bg-gradient-to-b from-slate-50 to-slate-100 min-h-screen font-sans">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0 }}

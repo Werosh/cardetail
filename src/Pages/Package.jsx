@@ -30,13 +30,10 @@ const packagePage = () => {
       id: 1,
       title: "Express Wash:",
       price: "$30 Sedan / $40 SUV",
-      icon: <Sparkles  className="w-8 h-8 text-blue-500" />,
+      icon: <Sparkles className="w-8 h-8 text-blue-500" />,
       description:
         "A quick and efficient exterior clean, including a hand wash, chamois dry, and tyre shine to give your car a refreshed look.",
-      features: [
-        "Wash Exterior and Chamois",
-        "Tyre Shine"
-      ],
+      features: ["Wash Exterior and Chamois", "Tyre Shine"],
       image:
         "https://i0.wp.com/peaceentqatar.com/wp-content/uploads/2019/07/17545524_140141669847553_5202430352564902303_o-1.jpg?ssl=1", // Added image path
     },
@@ -44,14 +41,10 @@ const packagePage = () => {
       id: 2,
       title: "Basic Wash:",
       price: "$40 Sedan / $50 SUV",
-      icon: <Sparkles  className="w-8 h-8 text-blue-500" />,
+      icon: <Sparkles className="w-8 h-8 text-blue-500" />,
       description:
         "Includes everything in the Express Wash plus an interior vacuum to remove dust and debris, keeping both the inside and outside of your car looking neat.",
-      features: [
-        "Wash Exterior and Chamois",
-        "Interior Vacuum",
-        "Tyre Shine"
-      ],
+      features: ["Wash Exterior and Chamois", "Interior Vacuum", "Tyre Shine"],
       image:
         "https://media.istockphoto.com/id/826875544/photo/high-pressure-washing-car-outdoors.jpg?s=612x612&w=0&k=20&c=VWs9auj2wJpOEXSe4ZC5XVHFCOpOHIbkFHLnZY2-Q1M=", // Added image path
     },
@@ -85,7 +78,7 @@ const packagePage = () => {
         "Windows Cleaned",
         "Wipe Down Trims",
         "Tyre Shine",
-        "Hand Polish"
+        "Hand Polish",
       ],
       image:
         "https://www.jalopnik.com/jalopnik/images/b5b2550c72d99e5dcb0bbd70c28a1495.jpg", // Added image path
@@ -97,11 +90,7 @@ const packagePage = () => {
       icon: <Car className="w-8 h-8 text-blue-500" />,
       description:
         "A deep cleaning package that combines the Standard Wash with a high-quality hand polish and an engine bay wash, ensuring a spotless and glossy finish.",
-      features: [
-        "Standard Wash +",
-        "Hand Polish",
-        "Engine Bay Wash"
-      ],
+      features: ["Standard Wash +", "Hand Polish", "Engine Bay Wash"],
       image:
         "https://www.momscardetailing.com/wp-content/uploads/2025/03/104202763_1708027612681300_7224795719929665443_n-1-rotated.jpg", // Added image path
     },
@@ -116,7 +105,7 @@ const packagePage = () => {
         "Standard Wash +",
         "Engine Bay Wash",
         "Shampoo Interior",
-        "Two Step Paint Correction "
+        "Two Step Paint Correction ",
       ],
       image:
         "https://www.cartoys.com/cdn/shop/files/Car_detailing_ServiceSection_512x300_2dd1ef7e-4b4d-45aa-90f5-650d299dd56e.jpg?v=1694798075&width=512", // Added image path
@@ -124,7 +113,7 @@ const packagePage = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen font-[Inter]">
+    <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen font-sans">
       {/* Hero Section */}
       <div className="relative h-96 bg-gray-900 overflow-hidden">
         <img
@@ -206,7 +195,10 @@ const packagePage = () => {
                 <p className="text-gray-600 mb-6 text-xl">{pkg.description}</p>
                 <ul className="space-y-2 mb-6">
                   {pkg.features.map((feature, index) => (
-                    <li key={index} className="flex items-center text-gray-700 text-xl">
+                    <li
+                      key={index}
+                      className="flex items-center text-gray-700 text-xl"
+                    >
                       <Star className="w-4 h-4 text-blue-500 mr-2" />
                       {feature}
                     </li>
@@ -304,16 +296,14 @@ const packagePage = () => {
             </p>
 
             <a href="/contact">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-blue-600 px-10 py-4 rounded-full font-bold  cursor-pointer text-lg"
-            >
-              Book an Appointment
-            </motion.button>
-            
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-blue-600 px-10 py-4 rounded-full font-bold  cursor-pointer text-lg"
+              >
+                Book an Appointment
+              </motion.button>
             </a>
-            
           </motion.div>
         </div>
       </div>
