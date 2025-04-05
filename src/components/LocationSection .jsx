@@ -4,33 +4,35 @@ import MapBack from "../images/background/MapBack.webp";
 
 const LocationSection = () => {
   return (
-    <section className="py-20 px-4 bg-black" id="location">
+    <section className="py-20 px-4 bg-white" id="location">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-6xl text-amber-100 font-bold text-center mb-12">
-          Locate Us...
+        <h2 className="text-5xl text-gray-800  text-center mb-5">
+          Locate Us
         </h2>
+        <div className="w-20 h-1 bg-gray-600 mx-auto mb-8"></div>
+
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className=" p-6 rounded-lg shadow-md h-full">
-            <div className="flex items-start gap-4 mb-6">
-              <MapPin size={58} className="text-blue-600 mt-1 flex-shrink-0" />
+          <div className=" p-6 rounded-lg shadow-md h-full  bg-gray-300">
+            <div className="flex items-start gap-4 mb-6 ">
+              <MapPin size={38} className="text-blue-600 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-bold text-5xl mb-2 text-red-700">
+                <h3 className=" text-3xl mb-2 text-blue-700">
                   Our Location
                 </h3>
-                <p className="text-gray-100 text-2xl">77/81 Reserve Rd,</p>
-                <p className="text-gray-100 text-2xl">Artarmon NSW 2064</p>
+                <p className="text-gray-600 text-xl">77/81 Reserve Rd,</p>
+                <p className="text-gray-600 text-xl">Artarmon NSW 2064</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <Phone size={48} className="text-blue-600 mt-1 flex-shrink-0" />
+              <Phone size={38} className="text-blue-600 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-bold text-5xl mb-2 text-red-700">
+                <h3 className=" text-3xl mb-2 text-blue-700">
                   Contact Us
                 </h3>
-                <p className="text-gray-100 text-2xl">(02) 9438 4988</p>
-                <p className="text-gray-100 text-2xl">
+                <p className="text-gray-600 text-xl">(02) 9438 4988</p>
+                <p className="text-gray-600 text-xl">
                   sparklingcarcare1@gmail.com
                 </p>
               </div>

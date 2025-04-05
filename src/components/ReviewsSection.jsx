@@ -59,8 +59,8 @@ const ReviewsSection = ({ reviews, ReviewBack }) => {
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-center">
-          <h2 className="text-5xl font-bold text-center mb-2 text-amber-50 bg-gradient-to-r from-[#000428] to-transparent via-[#004e92] w-[500px] py-5 rounded-tl-4xl rounded-bl-4xl">
-            Customer Reviews
+          <h2 className="text-5xl  text-center mb-2 text-amber-50 bg-gradient-to-r from-[#000428] to-transparent via-[#004e92] w-[500px] py-5 rounded-tl-4xl rounded-bl-4xl">
+          CUSTOMER REVIEWS
           </h2>
         </div>
         <div className="flex justify-center mb-12">

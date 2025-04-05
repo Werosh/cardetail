@@ -93,7 +93,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black py-16 font-sans">
+    <div className="min-h-screen bg-white py-16 font-sans">
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"
@@ -103,9 +103,9 @@ const ContactPage = () => {
         >
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-5xl xl:text-7xl font-bold text-center mb-16 text-red-600 mt-20"
+            className="text-4xl md:text-5xl xl:text-7xl font-bold text-center mb-16 text-blue-600 mt-20"
           >
-            Get in <span className="text-blue-100">Touch</span>
+            Get in <span className="text-gray-600">Touch</span>
           </motion.h1>
 
           <div className="bg-white/10 rounded-2xl shadow-2xl overflow-hidden">
@@ -255,9 +255,9 @@ const ContactPage = () => {
               {/* Right Side - Form */}
               <motion.div
                 variants={itemVariants}
-                className="w-full md:w-7/12 p-8 md:p-12"
+                className="w-full md:w-7/12 p-8 md:p-12 bg-gray-700"
               >
-                <h2 className="text-2xl font-bold text-gray-100 mb-6">
+                <h2 className="text-2xl font-bold text-gray-200 mb-6">
                   Schedule Your Detail
                 </h2>
 
@@ -314,7 +314,7 @@ const ContactPage = () => {
                         />
                         <label
                           htmlFor="name"
-                          className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
+                          className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-400 peer-focus:text-sm"
                         >
                           Full Name
                         </label>
@@ -336,7 +336,7 @@ const ContactPage = () => {
                         />
                         <label
                           htmlFor="email"
-                          className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
+                          className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-400 peer-focus:text-sm"
                         >
                           Email Address
                         </label>
@@ -359,7 +359,7 @@ const ContactPage = () => {
                         />
                         <label
                           htmlFor="phone"
-                          className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
+                          className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-400 peer-focus:text-sm"
                         >
                           Phone Number
                         </label>
@@ -380,7 +380,7 @@ const ContactPage = () => {
                         />
                         <label
                           htmlFor="vehicleType"
-                          className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
+                          className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-400 peer-focus:text-sm"
                         >
                           Vehicle Make/Model
                         </label>
@@ -390,7 +390,7 @@ const ContactPage = () => {
                     <motion.div variants={itemVariants} className="relative">
                       <label
                         htmlFor="service"
-                        className="text-sm text-gray-600 mb-1 block"
+                        className="text-sm text-gray-400 mb-1 block"
                       >
                         Service Requested
                       </label>
@@ -423,7 +423,7 @@ const ContactPage = () => {
                       <motion.div variants={itemVariants} className="relative">
                         <label
                           htmlFor="preferredDate"
-                          className="text-sm text-gray-600 mb-1 block"
+                          className="text-sm text-gray-400 mb-1 block"
                         >
                           Preferred Date
                         </label>
@@ -440,7 +440,7 @@ const ContactPage = () => {
                       <motion.div variants={itemVariants} className="relative">
                         <label
                           htmlFor="preferredTime"
-                          className="text-sm text-gray-600 mb-1 block"
+                          className="text-sm text-gray-400 mb-1 block"
                         >
                           Preferred Time
                         </label>
@@ -564,7 +564,8 @@ const ContactPage = () => {
           </div>
 
           <motion.div variants={itemVariants} className="mt-16 text-center">
-            <h2 className="text-5xl font-bold text-red-100 mb-8">Find Us</h2>
+            <h2 className="text-5xl  text-gray-600 mb-8">Find Us</h2>
+            
             <div className="bg-white rounded-xl shadow-lg h-64 overflow-hidden">
               <div className="rounded-lg overflow-hidden shadow-md h-64">
                 <iframe

@@ -84,11 +84,11 @@ const Navbar = () => {
           </motion.a>
 
           {/* Desktop Navigation with shine effect */}
-          <div className=" hidden md:flex md:items-center md:space-x-8 xl:items-center bg-gray-600/70 p-5 rounded-bl-4xl rounded-tr-4xl shadow-lg text-amber-50 font-semibold">
-            <NavLink href="/" text="Home" />
-            <NavLink href="/services" text="Services" />
-            <NavLink href="/packages" text="Packages" />
-            <NavLink href="/contact" text="Contact" />
+          <div className=" hidden md:flex md:items-center md:space-x-8 xl:items-center p-5   text-amber-50 ">
+            <NavLink href="/" text="HOME" />
+            <NavLink href="/services" text="SERVICE" />
+            <NavLink href="/packages" text="PACKAGES" />
+            <NavLink href="/contact" text="CONTACT" />
           </div>
 
           <div className="hidden md:flex md:items-center md:space-x-8 xl:items-center">

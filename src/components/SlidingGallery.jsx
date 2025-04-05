@@ -33,8 +33,6 @@ import Img30 from "../images/gallery/IMG_7950.webp"
 import Img31 from "../images/gallery/IMG_8060.webp"
 import Img32 from "../images/gallery/IMG_9149.webp"
 
-
-
 const SlidingGallery = () => {
   // Sample gallery images with random heights
   const rowOneImages = [
@@ -78,40 +76,45 @@ const SlidingGallery = () => {
     { id: 32, url: Img32, alt: "Architecture project" },
     { id: 33, url: Img31, alt: "Interior design" }, // used twice to balance
   ];
-  
 
   return (
-    <section className="overflow-hidden bg-black">
+    <section className="overflow-hidden bg-white py-12">
       <div className="max-w-full">
-        <h2 className="text-3xl font-bold text-center mb-6 mt-10 text-amber-50">Our Work</h2>
+        <h2 className="text-3xl text-center mb-4 text-gray-700">A CLOSER LOOK AT WHAT WE DO</h2>
+        <div className="w-50 h-1 bg-gray-600 mx-auto mb-8"></div>
+
 
         {/* First row sliding left to right */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden ">
           <div className="flex animate-slide-left">
             {/* Double the images to create seamless loop */}
             {[...rowOneImages, ...rowOneImages].map((image, index) => (
-              <div key={`${image.id}-${index}`} className="flex-shrink-0">
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  className="w-64 h-48 object-cover"
-                />
+              <div key={`${image.id}-${index}`} className="flex-shrink-0 ">
+                <div className="p-1 bg-white shadow-sm rounded">
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    className="w-64 h-48 object-cover"
+                  />
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Second row sliding right to left */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden ">
           <div className="flex animate-slide-right">
             {/* Double the images to create seamless loop */}
             {[...rowTwoImages, ...rowTwoImages].map((image, index) => (
-              <div key={`${image.id}-${index}`} className="flex-shrink-0">
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  className="w-64 h-48 object-cover"
-                />
+              <div key={`${image.id}-${index}`} className="flex-shrink-0 ">
+                <div className="p-1 bg-white shadow-sm rounded">
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    className="w-64 h-48 object-cover"
+                  />
+                </div>
               </div>
             ))}
           </div>
@@ -122,18 +125,18 @@ const SlidingGallery = () => {
           <div className="flex animate-slide-left">
             {/* Double the images to create seamless loop */}
             {[...rowThreeImages, ...rowThreeImages].map((image, index) => (
-              <div key={`${image.id}-${index}`} className="flex-shrink-0">
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  className="w-64 h-48 object-cover"
-                />
+              <div key={`${image.id}-${index}`} className="flex-shrink-0 ">
+                <div className="p-1 bg-white shadow-sm rounded">
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    className="w-64 h-48 object-cover"
+                  />
+                </div>
               </div>
             ))}
           </div>
         </div>
-
-       
       </div>
 
       <style jsx>{`
@@ -156,11 +159,11 @@ const SlidingGallery = () => {
         }
 
         .animate-slide-left {
-          animation: slide-left 30s linear infinite;
+          animation: slide-left 40s linear infinite;
         }
 
         .animate-slide-right {
-          animation: slide-right 30s linear infinite;
+          animation: slide-right 40s linear infinite;
         }
       `}</style>
     </section>

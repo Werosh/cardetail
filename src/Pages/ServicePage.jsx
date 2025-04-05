@@ -172,32 +172,35 @@ const ServicePage = () => {
       </div>
 
       {/* CTA Section */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="bg-gradient-to-r from-[#0f0c29] to-[#24243e] via-[#302b63]py-16 mt-16"
-      >
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to Transform Your Vehicle?
-          </h2>
-          <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-xl">
-            Schedule your premium detailing service today and experience the
-            difference our professional care makes.
-          </p>
+      <div className="bg-gradient-to-r from-[#0f0c29] to-[#24243e] via-[#302b63] text-white py-10">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <h2 className="text-3xl font-bold mb-4">
+              Ready to Transform Your Vehicle?
+            </h2>
+            <p className="text-blue-100 mb-8 text-xl">
+              Book your appointment today and experience our premium detailing
+              services.
+            </p>
 
-          <a href="/contact">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white cursor-pointer text-blue-600 rounded-lg font-bold hover:bg-gray-100 transition duration-300 shadow-lg mb-5"
-            >
-              Book Your Appointment
-            </motion.button>
-          </a>
+            <a href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-blue-600 px-10 py-4 rounded-full font-bold  cursor-pointer text-lg"
+              >
+                Book an Appointment
+              </motion.button>
+            </a>
+          </motion.div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

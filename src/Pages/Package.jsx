@@ -278,7 +278,7 @@ const packagePage = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="bg-gradient-to-r from-[#0f0c29] to-[#24243e] via-[#302b63] text-white py-16">
+      <div className="bg-gradient-to-r from-[#0f0c29] to-[#24243e] via-[#302b63] text-white py-10">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
