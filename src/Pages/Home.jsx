@@ -13,8 +13,8 @@ import {
   SprayCan,
 } from "lucide-react";
 
-import BackIMg from "../images/background/background.webp";
-import ServiceBackground from "../images/background/service_back.webp";
+import BackIMg from "../images/background/homepage-image-2.webp";
+
 import ReviewBack from "../images/background/review_back.jpg";
 
 import ReviewsSection from "../components/ReviewsSection";
@@ -87,7 +87,7 @@ const Home = () => {
             <h1 className="text-5xl xl:text-9xl lg:text-7xl md:text-7xl font-bold mb-4 ">
               Sparkling Car Care
             </h1>
-            <p className="text-2xl font-sans  mb-8 max-w-2xl  py-2  bg-gradient-to-b from-transparent to-[#6441A5] rounded-bl-[80px] rounded-br-[80px]  px-5">
+            <p className="text-2xl font-sans  mb-8 max-w-2xl  py-2  bg-gradient-to-b from-transparent to-[#272231] rounded-bl-[80px] rounded-br-[80px]  px-5">
               Professional detailing services that bring your vehicle back to
               showroom condition.
             </p>
