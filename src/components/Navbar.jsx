@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Droplets, Car, Star, Sparkles } from "lucide-react";
+import { Menu, X, Star, PhoneOutgoing } from "lucide-react";
+
+import LogoImg from "../../public/logo.png"; // Adjust the path to your logo image
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,65 +29,26 @@ const Navbar = () => {
         }`}
       >
         <div className="flex justify-between items-center h-24">
-          {/* Logo with dramatic animated effect */}
+          {/* Logo with image and text */}
           <motion.a
             href="/"
-            className="flex items-center"
+            className="flex items-center "
             whileHover={{ scale: 1.05 }}
           >
-            <div className="relative">
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 5, 0, -5, 0],
-                }}
-                transition={{ duration: 3, repeat: Infinity }}
-              >
-                <Droplets size={36} className="text-blue-600" />
-              </motion.div>
-              <motion.div
-                className="absolute -right-2 -top-1"
-                animate={{
-                  y: [0, -8, 0],
-                  x: [0, 2, 0],
-                  rotate: [0, 15, 0],
-                }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                <Car size={30} className="text-blue-100" />
-              </motion.div>
-              <motion.div
-                className="absolute -right-4 -top-4"
-                animate={{
-                  opacity: [0, 1, 0],
-                  scale: [0.5, 1.5, 0.5],
-                  rotate: [0, 180, 0],
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <Sparkles size={16} className="text-yellow-400" />
-              </motion.div>
-            </div>
-            <div className="ml-3">
-              <motion.span
-                className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#A1FFCE] to-[#FAFFD1]"
-                animate={{
-                  textShadow: [
-                    "0px 0px 0px rgba(0,0,0,0)",
-                    "0px 0px 10px rgba(59,130,246,0.5)",
-                    "0px 0px 0px rgba(0,0,0,0)",
-                  ],
-                }}
-                transition={{ duration: 3, repeat: Infinity }}
-              >
-                Sparkling Car Care
-              </motion.span>
-            </div>
+            {/* Add the logo image here */}
+            <img 
+              src={LogoImg}
+              alt="Car Logo" 
+              className="h-22 w-22 rounded-full object-cover"
+            />
+            <span className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#A1FFCE] to-[#FAFFD1]">
+              Sparkling Car Care
+            </span>
           </motion.a>
 
           {/* Desktop Navigation with shine effect */}
-          <div className=" hidden md:flex md:items-center md:space-x-8 xl:items-center p-5   text-amber-50 ">
-            <NavLink href="/" text="HOME" />
+          <div className="hidden md:flex md:items-center t md:space-x-8 xl:items-center p-5 text-amber-50">
+            <NavLink href="/" text="HOME"  />
             <NavLink href="/services" text="SERVICE" />
             <NavLink href="/packages" text="PACKAGES" />
             <NavLink href="/contact" text="CONTACT" />
@@ -93,7 +56,7 @@ const Navbar = () => {
 
           <div className="hidden md:flex md:items-center md:space-x-8 xl:items-center">
             <motion.a
-              href="/contact"
+              href="tel:+61294384988"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
               className="relative ml-6 px-8 py-3 font-semibold rounded-br-3xl rounded-tl-3xl text-white overflow-hidden"
@@ -110,30 +73,20 @@ const Navbar = () => {
                 transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 1 }}
                 style={{ filter: "blur(8px)" }}
               />
-              <span className="relative flex items-center ">
-                BOOK NOW
-                <Star className="ml-2 h-4 w-4" />
+              <span className="relative flex items-center text-xl ">
+                CALL NOW
+                <PhoneOutgoing className="ml-2 h-4 w-4" />
               </span>
             </motion.a>
           </div>
 
-          {/* Mobile menu button with pulse effect */}
-          <motion.button
+          {/* Mobile menu button */}
+          <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-3 rounded-full bg-blue-600 text-white shadow-lg"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            animate={{
-              boxShadow: [
-                "0px 0px 0px rgba(37, 99, 235, 0)",
-                "0px 0px 15px rgba(37, 99, 235, 0.7)",
-                "0px 0px 0px rgba(37, 99, 235, 0)",
-              ],
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
+          </button>
         </div>
       </div>
 
@@ -202,7 +155,7 @@ const NavLink = ({ href, text }) => {
   return (
     <motion.a
       href={href}
-      className="relative  text-lg overflow-hidden"
+      className="relative text-xl overflow-hidden"
       whileHover={{ scale: 1.1 }}
     >
       <span className="relative z-10">{text}</span>

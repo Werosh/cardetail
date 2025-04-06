@@ -33,6 +33,8 @@ import Img30 from "../images/gallery/IMG_7950.webp"
 import Img31 from "../images/gallery/IMG_8060.webp"
 import Img32 from "../images/gallery/IMG_9149.webp"
 
+import Logo from "../images/gallery/SPARKLING_CAR_CARE.png"
+
 const SlidingGallery = () => {
   // Sample gallery images with random heights
   const rowOneImages = [
@@ -40,6 +42,7 @@ const SlidingGallery = () => {
     { id: 2, url: Img14, alt: "Interior design" },
     { id: 3, url: Img21, alt: "Landscape design" },
     { id: 4, url: Img3, alt: "Architecture project" },
+    { id: 4, url: Logo, alt: "Logo Image" },
     { id: 5, url: Img10, alt: "Interior design" },
     { id: 6, url: Img23, alt: "Landscape design" },
     { id: 7, url: Img5, alt: "Architecture project" },
