@@ -84,10 +84,10 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="text-center flex flex-col items-center justify-center"
           >
-            <h1 className="text-5xl xl:text-9xl lg:text-7xl md:text-7xl font-bold mb-4 ">
-              Sparkling Car Care
+            <h1 className="text-5xl xl:text-8xl lg:text-7xl md:text-7xl font-bold mb-4 ">
+            Professional Car Detailing
             </h1>
-            <p className="text-2xl font-sans  mb-8 max-w-2xl  py-2  bg-gradient-to-b from-transparent to-[#272231] rounded-bl-[80px] rounded-br-[80px]  px-5">
+            <p className="text-3xl font-sans  mb-8 max-w-2xl  py-2  bg-gradient-to-b from-transparent to-[#272231] rounded-bl-[80px] rounded-br-[80px]  px-5">
               Professional detailing services that bring your vehicle back to
               showroom condition.
             </p>
@@ -97,7 +97,7 @@ const Home = () => {
                 href="tel:+61294384988"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center gap-2 bg-white text-black font-bold py-3 px-8 rounded-lg"
+                className="flex items-center justify-center gap-2 bg-white text-black font-bold py-3 px-8 rounded-lg text-xl"
               >
                 <Phone size={20} />
                 CALL NOW
@@ -107,7 +107,7 @@ const Home = () => {
                 href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#1488CC] to-[#2B32B2] text-white font-bold py-3 px-8 rounded-lg"
+                className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#1488CC] to-[#2B32B2] text-white font-bold py-3 px-8 rounded-lg text-xl"
               >
                 <Calendar size={20} />
                 BOOK NOW

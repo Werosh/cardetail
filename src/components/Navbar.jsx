@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Star, PhoneOutgoing } from "lucide-react";
-
+import { Menu, X, Star } from "lucide-react";
 import LogoImg from "../../public/logo.png"; // Adjust the path to your logo image
 
 const Navbar = () => {
@@ -36,24 +35,26 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
           >
             {/* Add the logo image here */}
-            <img 
+            <img
               src={LogoImg}
-              alt="Car Logo" 
-              className="h-22 w-22 rounded-full object-cover"
+              alt="Car Logo"
+              className="h-32 w-32 rounded-full object-cover"
             />
-            <span className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#A1FFCE] to-[#FAFFD1]">
+            <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#A1FFCE] to-[#FAFFD1]">
               Sparkling Car Care
             </span>
           </motion.a>
+          
 
           {/* Desktop Navigation with shine effect */}
           <div className="hidden md:flex md:items-center t md:space-x-8 xl:items-center p-5 text-amber-50">
-            <NavLink href="/" text="HOME"  />
+            <NavLink href="/" text="HOME" />
             <NavLink href="/services" text="SERVICE" />
             <NavLink href="/packages" text="PACKAGES" />
             <NavLink href="/contact" text="CONTACT" />
           </div>
 
+          {/* CAll Now Buttons ----------------------------------- */}
           <div className="hidden md:flex md:items-center md:space-x-8 xl:items-center">
             <motion.a
               href="tel:+61294384988"
@@ -75,7 +76,7 @@ const Navbar = () => {
               />
               <span className="relative flex items-center text-xl ">
                 CALL NOW
-                <PhoneOutgoing className="ml-2 h-4 w-4" />
+                <Star className="ml-2 h-4 w-4" />
               </span>
             </motion.a>
           </div>
