@@ -31,9 +31,9 @@ const ContactPage = () => {
     setError(null);
 
     // Replace these with your actual Email.js credentials
-    const serviceId = "service_sm7cbb8";
-    const templateId = "template_k832hih";
-    const publicKey = "EzReJSUxpdt8P7ZqI"; // You need to add your public key here
+    const serviceId = "service_h5nm6us";
+    const templateId = "template_rwj8y3o";
+    const publicKey = "nZf_MUQp8PdIr3djs"; // You need to add your public key here
 
     emailjs
       .sendForm(serviceId, templateId, form.current, publicKey)
@@ -565,7 +565,7 @@ const ContactPage = () => {
 
           <motion.div variants={itemVariants} className="mt-16 text-center">
             <h2 className="text-5xl  text-gray-600 mb-8">Find Us</h2>
-            
+
             <div className="bg-white rounded-xl shadow-lg h-64 overflow-hidden">
               <div className="rounded-lg overflow-hidden shadow-md h-64">
                 <iframe
